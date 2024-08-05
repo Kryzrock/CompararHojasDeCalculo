@@ -1,0 +1,33 @@
+Ambos archivos tienen las mismas hojas.
+Las columnas en la hoja 'EX+DISPO' son iguales.
+Los tipos de datos en la hoja 'EX+DISPO' son iguales.
+Las columnas en la hoja 'CONFORMIDADES' son iguales.
+Los tipos de datos en la hoja 'CONFORMIDADES' son iguales.
+Las columnas en la hoja 'ANTICIPOS' son iguales.
+Los tipos de datos en la hoja 'ANTICIPOS' son iguales.
+Las columnas en la hoja 'BONOS' son iguales.
+Los tipos de datos en la hoja 'BONOS' son iguales.
+Las columnas en la hoja 'CAJAS CHICAS' son iguales.
+Los tipos de datos en la hoja 'CAJAS CHICAS' son iguales.
+Las columnas en la hoja 'CONVALIDACIONES' son iguales.
+Los tipos de datos en la hoja 'CONVALIDACIONES' son iguales.
+Las columnas en la hoja 'FRI' son iguales.
+Los tipos de datos en la hoja 'FRI' son iguales.
+Las columnas en la hoja 'OPTAR' son iguales.
+Los tipos de datos en la hoja 'OPTAR' son iguales.
+Las columnas en la hoja 'FONDO ROTATORIO' son iguales.
+Los tipos de datos en la hoja 'FONDO ROTATORIO' son iguales.
+Las columnas en la hoja 'FONDO EXTRAO' son iguales.
+Los tipos de datos en la hoja 'FONDO EXTRAO' son iguales.
+Las columnas en la hoja 'REINTEGRO' son iguales.
+Los tipos de datos en la hoja 'REINTEGRO' son iguales.
+Las columnas en la hoja 'SIGEN' son iguales.
+Los tipos de datos en la hoja 'SIGEN' son iguales.
+Las columnas en la hoja 'VISA FLOTA' son iguales.
+Los tipos de datos en la hoja 'VISA FLOTA' son iguales.
+Las columnas en la hoja 'HORAS EXTRAS' son iguales.
+Los tipos de datos en la hoja 'HORAS EXTRAS' son iguales.
+Las columnas en la hoja 'DEVOLUCIÓN' son iguales.
+Los tipos de datos en la hoja 'DEVOLUCIÓN' son iguales.
+Las columnas en la hoja 'Ingreso Expedientes' son iguales.
+Los tipos de datos en la hoja 'Ingreso Expedientes' son iguales.
