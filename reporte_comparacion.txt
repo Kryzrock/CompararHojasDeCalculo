@@ -12,7 +12,8 @@ Los tipos de datos en la hoja 'CAJAS CHICAS' son iguales.
 Las columnas en la hoja 'CONVALIDACIONES' son iguales.
 Los tipos de datos en la hoja 'CONVALIDACIONES' son iguales.
 Las columnas en la hoja 'FRI' son iguales.
-Los tipos de datos en la hoja 'FRI' son iguales.
+Diferencias en los tipos de datos de la hoja 'FRI':
+Columna 'Fecha Últ. Modif.': Tipo de dato en Archivo 1: datetime64[ns], Tipo de dato en Archivo 2: object
 Las columnas en la hoja 'OPTAR' son iguales.
 Los tipos de datos en la hoja 'OPTAR' son iguales.
 Las columnas en la hoja 'FONDO ROTATORIO' son iguales.

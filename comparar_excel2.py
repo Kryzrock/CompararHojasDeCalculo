@@ -47,8 +47,8 @@ def compare_excel_files(file1, file2):
     return report
 
 # Usar la función
-file1 = 'REGISTRO_Gsandoval_20240208_1341.xls'
-file2 = 'REGISTRO_Gsandoval_20240805_1251.xls'
+file1 = 'File1.xls'
+file2 = 'File2.xls'
 
 resultado = compare_excel_files(file1, file2)
 
