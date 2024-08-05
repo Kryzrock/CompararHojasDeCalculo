@@ -1,7 +1,13 @@
+# Comparar Hojas de Calculo
+Este proyecto está diseñado para comparar dos archivos Excel ubicados en el directorio raíz del proyecto. Los scripts incluidos en este proyecto realizan las siguientes comparaciones entre las hojas de cálculo:
 
-# Proyecto de Comparación de Archivos Excel
+- La cantidad de hojas en cada archivo.
+- La cantidad de columnas en cada hoja.
+- El tipo de datos de cada columna.
 
-Este proyecto tiene como objetivo comparar dos archivos Excel ubicados en el directorio raíz del proyecto. Los archivos a comparar son especificados en las variables `file1` y `file2` dentro de los scripts.
+Para utilizar los scripts, especifica los archivos a comparar en las variables `file1` y `file2` dentro de los scripts correspondientes.
+
+Este proceso de comparación facilita la identificación de inconsistencias entre los archivos Excel, asegurando que los datos se mantengan coherentes y estructurados correctamente.
 
 ## Requisitos Previos
 
