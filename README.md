@@ -1,4 +1,4 @@
-# CompararHojasDeCalculo
+# Comparar Hojas de Calculo
 Este proyecto está diseñado para comparar dos archivos Excel ubicados en el directorio raíz del proyecto. Los scripts incluidos en este proyecto realizan las siguientes comparaciones entre las hojas de cálculo:
 
 - La cantidad de hojas en cada archivo.
