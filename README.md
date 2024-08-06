@@ -54,7 +54,7 @@ Para ejecutar los scripts, utiliza la consola de la siguiente manera:
 
 **Comparar Excel**
 ```bash
-PS C:\DirecotorioProyecto> py comparar_excel.py
+PS C:\DirectorioProyecto> py comparar_excel.py
 >> 
 Reporte de comparación generado: 'reporte_comparacion.txt'
 El script se ejecutó correctamente.
@@ -62,7 +62,7 @@ El script se ejecutó correctamente.
 
 **Comparar Excel 2**
 ```bash
-PS C:\DirecotorioProyecto> py comparar_excel2.py
+PS C:\DirectorioProyecto> py comparar_excel2.py
 >> 
 Reporte de comparación generado: 'reporte_comparacion.txt'
 El script se ejecutó correctamente.
