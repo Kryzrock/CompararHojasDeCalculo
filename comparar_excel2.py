@@ -47,8 +47,8 @@ def compare_excel_files(file1, file2):
     return report
 
 # Usar la función
-file1 = 'File1.xls'
-file2 = 'File2.xls'
+file1 = 'DGA_CPF_PROGRAMAS_20250423_1736.xls' 
+file2 = 'DGA_CPF_PROGRAMAS_20250612_1150.xls'
 
 resultado = compare_excel_files(file1, file2)
 
@@ -58,4 +58,4 @@ with open('reporte_comparacion.txt', 'w') as f:
 
 # Imprimir mensaje de confirmación en la terminal
 print("Reporte de comparación generado: 'reporte_comparacion.txt'")
-print("El script se ejecutó correctamente.")
+print("El script se ejecutó correctamente 2.")
