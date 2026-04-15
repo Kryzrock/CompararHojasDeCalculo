@@ -1,74 +1,153 @@
 # Comparar Hojas de Calculo
-Este proyecto está diseñado para comparar dos archivos Excel ubicados en el directorio raíz del proyecto. Los scripts incluidos en este proyecto realizan las siguientes comparaciones entre las hojas de cálculo:
 
-- La cantidad de hojas en cada archivo.
-- La cantidad de columnas en cada hoja.
-- El tipo de datos de cada columna.
+Este proyecto compara archivos Excel `.xls` y `.xlsx` para detectar diferencias entre versiones de planillas usadas en procesos de carga o importacion.
 
-Para utilizar los scripts, especifica los archivos a comparar en las variables `file1` y `file2` dentro de los scripts correspondientes.
+La herramienta principal actual es `comparador_excel_menu.py`, que permite ejecutar comparaciones desde un menu interactivo y generar reportes `.txt`.
 
-Este proceso de comparación facilita la identificación de inconsistencias entre los archivos Excel, asegurando que los datos se mantengan coherentes y estructurados correctamente.
+## Que compara
 
-## Requisitos Previos
+El comparador revisa:
 
-Antes de poder ejecutar los scripts, asegúrate de tener los siguientes requisitos instalados y configurados:
+- Hojas presentes en cada archivo.
+- Dimensiones de cada hoja.
+- Columnas por hoja.
+- Tipos de datos por columna.
+- Contenido de las celdas cuando la estructura coincide.
 
-1. Instalar la última versión de Python desde [python.org](https://www.python.org/downloads/).
-2. Verificar que Python esté instalado y corriendo correctamente usando el siguiente comando en la consola:
-   ```bash
-   py --version
-   ```
-3. Instalar los siguientes módulos de Python utilizando pip:
-   ```bash
-   py -m pip install pandas 
-   py -m pip install xlrd
-   py -m pip install openpyxl
-   ```
+El reporte final separa:
 
-## Scripts Disponibles
+- Diferencias estructurales.
+- Diferencias de contenido.
 
-### 1. `comparar_excel.py`
+## Requisitos
 
-Este script compara dos archivos Excel y genera un archivo `.txt` con el resultado de la comparación.
+1. Instalar Python desde [python.org](https://www.python.org/downloads/).
+2. Verificar la instalacion:
 
-**Resultado de ejemplo en el archivo `.txt`:**
-```
-Diferencias en los tipos de datos de la hoja 'NombreHoja':
-Archivo 1: [dtype('<M8[ns]'), dtype('O'), dtype('<M8[ns]'), dtype('<M8[ns]'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O')]
-Archivo 2: [dtype('<M8[ns]'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O'), dtype('O')]
-```
-
-### 2. `comparar_excel2.py`
-
-Este script también compara dos archivos Excel, pero está configurado para trabajar con archivos donde la fila 1 de cada hoja contiene los nombres de las columnas. 
-
-**Resultado de ejemplo en el archivo `.txt`:**
-```
-Diferencias en los tipos de datos de la hoja 'Nombre de hoja':
-Columna 'Nombre de columna': Tipo de dato en Archivo 1: datetime64[ns], Tipo de dato en Archivo 2: object
-```
-
-## Ejecución de los Scripts
-
-Para ejecutar los scripts, utiliza la consola de la siguiente manera:
-
-**Comparar Excel**
 ```bash
-PS C:\DirectorioProyecto> py comparar_excel.py
->> 
-Reporte de comparación generado: 'reporte_comparacion.txt'
-El script se ejecutó correctamente.
+py --version
 ```
 
-**Comparar Excel 2**
+3. Instalar dependencias:
+
 ```bash
-PS C:\DirectorioProyecto> py comparar_excel2.py
->> 
-Reporte de comparación generado: 'reporte_comparacion.txt'
-El script se ejecutó correctamente.
+py -m pip install pandas
+py -m pip install xlrd
+py -m pip install openpyxl
 ```
 
-Cada script generará un archivo `.txt` con el resultado de la comparación de los archivos especificados.
+## Archivos principales
 
----
+- `comparador_excel_menu.py`: interfaz principal con menu.
+- `comparar_excel.py`: script simple legado.
+- `comparar_excel2.py`: variante legacy para hojas con encabezados en la primera fila.
+- `categorias.json`: configuracion de categorias detectadas por prefijo.
+- `comparar_excel.bat`: lanzador rapido en Windows para abrir el menu.
 
+## Uso
+
+### Opcion recomendada
+
+Ejecutar el menu principal:
+
+```bash
+py comparador_excel_menu.py
+```
+
+O en Windows:
+
+```bat
+comparar_excel.bat
+```
+
+### Modos del menu
+
+1. `Comparacion por Carpetas`
+   Compara automaticamente archivos de `archivos_viejos/` contra `archivos_nuevos/` usando el prefijo del nombre.
+
+2. `Comparacion Automatica`
+   Usa exactamente 2 archivos `.xls` o `.xlsx` ubicados en la carpeta actual.
+
+3. `Comparacion Manual`
+   Busca archivos de forma recursiva y permite elegir manualmente cual es el archivo viejo y cual es el nuevo.
+
+4. `Ver Inventario de Archivos`
+   Lista los archivos detectados agrupados por categoria y subcategoria.
+
+## Convencion de nombres
+
+Para detectar version y agrupar archivos, el menu reconoce nombres como:
+
+```text
+NOMBRE_YYYYMMDD_HHMM.xls
+NOMBRE_YYYYMMDD_HHMM.xlsx
+NOMBRE_YYYYMMDD.xls
+NOMBRE_YYYYMMDD.xlsx
+```
+
+Ejemplos:
+
+```text
+DGA_CPF_PROGRAMAS_20251216_1201.xls
+DGA_CPF_OFICIOS_JUDICIALES_20251216_1202.xlsx
+```
+
+## Categorias configurables
+
+La deteccion de categorias ya no esta fija en el codigo. Se toma desde `categorias.json`.
+
+Ejemplo:
+
+```json
+{
+  "DGA_CPF_PROGRAMAS": ["DGA-CPF", "Programas"],
+  "REGISTRO_": ["SECRETARIA", "Registro"]
+}
+```
+
+Si necesitas agregar una categoria nueva, alcanza con sumar una entrada en ese archivo.
+
+## Salida de reportes
+
+Los reportes se guardan automaticamente en:
+
+```text
+reportes/YYYYMMDD/
+```
+
+Cada reporte incluye:
+
+- Fecha y hora de ejecucion.
+- Archivos comparados.
+- Categoria detectada cuando aplica.
+- Detalle de diferencias estructurales y de contenido.
+
+## Estructura esperada
+
+Ejemplo de carpetas:
+
+```text
+CompararArchivos/
+├─ archivos_nuevos/
+├─ archivos_viejos/
+├─ historial/
+├─ reportes/
+├─ categorias.json
+├─ comparar_excel.bat
+└─ comparador_excel_menu.py
+```
+
+## Ejemplo de ejecucion
+
+```bash
+PS C:\DirectorioProyecto> py comparador_excel_menu.py
+```
+
+El programa abrira el menu y guiara la comparacion segun el modo elegido.
+
+## Notas
+
+- Para archivos `.xls` se usa `xlrd`.
+- Para archivos `.xlsx` se usa `openpyxl`.
+- Los reportes se escriben en UTF-8.
+- Si dos archivos tienen la misma estructura pero distinto contenido, el reporte ahora lo informa explicitamente.

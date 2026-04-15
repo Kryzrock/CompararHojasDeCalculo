@@ -1,3 +1,3 @@
 @echo off
-py comparar_excel2.py
+py comparador_excel_menu.py
 pause

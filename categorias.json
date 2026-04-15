@@ -1,0 +1,8 @@
+{
+  "DGA_CPF_OFICIOS_JUDICIALES": ["DGA-CPF", "Oficios Judiciales"],
+  "DGA_CPF_OPERATIVOS_PAGO": ["DGA-CPF", "Operativos de Pago"],
+  "DGA_CPF_PROGRAMAS": ["DGA-CPF", "Programas"],
+  "REGISTRO_": ["SECRETARIA", "Registro"],
+  "DATOSMES": ["PRESUPUESTARIA", "Datos del Mes"],
+  "PRESUPUESTO": ["PRESUPUESTARIA", "Presupuesto"]
+}
